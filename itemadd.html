@@ -46,7 +46,7 @@
     <!-- Custom styles for this template -->
   </head>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" role="navigation">
-    SmartCloset
+    <a class="navbar-brand" href="">SmartCloset</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -71,16 +71,16 @@
   <body>
     <div class="container" id="signup">
       <h3 class="text-center">Add Item to Wardrobe</h3>
-      <small>Asterisk (*) indicates required</small>
+      <small>Asterisk (*) indicates optional</small>
       <form action="./page2.html">
         <div class="custom-file">
           <input type="file" class="custom-file-input" id="validatedCustomFile" accept="image/*" required>
-          <label class="custom-file-label" for="validatedCustomFile">Choose Image (*)...</label>
+          <label class="custom-file-label" for="validatedCustomFile">Choose Image...</label>
           <div class="invalid-feedback">Invalid image</div>
         </div>
         <div class="input-group mb-3">
           <select class="custom-select" id="inputGroupSelect01" required>
-            <option value="">Choose Category (*)...</option>
+            <option value="">Choose Category...</option>
             <option value="top">Tops</option>
             <option value="bottom">Bottoms</option>
             <option value="outer">Outerwear</option>
@@ -94,13 +94,13 @@
           </div>
         </div>
         <div class="form-group">
-          <input type="name" class="form-control" placeholder="Name (*)..." required>
+          <input type="name" class="form-control" placeholder="Name..." required>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Color...">
+          <input type="text" class="form-control" placeholder="Color(*)...">
         </div>
         <div class="form-group">
-          <input type="text" id="brand" class="form-control" placeholder="Brand...">
+          <input type="text" id="brand" class="form-control" placeholder="Brand(*)...">
         </div>
         <button type="submit" class="btn btn-primary">Add Item</button>
         <a href="./page2.html" class="btn btn-outline-secondary">Cancel</a>
@@ -115,3 +115,4 @@
       });
     </script>
   <body>
+</html>
