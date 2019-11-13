@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    <script type='text/javascript' src='scripts.js'></script>
     <!-- W3 CSS-->
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/extras.css">
@@ -70,33 +70,116 @@
   </nav>
 
   <body>
+
     <div class="container">
-      <h1><p>Welcome</p></h1>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+      <h1><p>Home</p></h1>
     </div>
+
+<!-- start of pfp html  -->
+    <div class="profile">
+        <div class="photo">
+            <input type="file" accept="image/*">
+            <div class="photo__helper">
+                <div class="photo__frame photo__frame--circle">
+                    <canvas class="photo__canvas"></canvas>
+                    <div class="message is-empty">
+                        <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                        <p class="message--mobile">Tap here to select your picture.</p>
+                    </div>
+                    <div class="message is-loading">
+                        <i class="fa fa-2x fa-spin fa-spinner"></i>
+                    </div>
+                    <div class="message is-dragover">
+                        <i class="fa fa-2x fa-cloud-upload"></i>
+                        <p>Drop your photo</p>
+                    </div>
+                    <div class="message is-wrong-file-type">
+                        <p>Only images allowed.</p>
+                        <p class="message--desktop">Drop your photo here or browse your computer.</p>
+                        <p class="message--mobile">Tap here to select your picture.</p>
+                    </div>
+                    <div class="message is-wrong-image-size">
+                        <p>Your photo must be larger than 350px.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo__options hide">
+                <div class="photo__zoom">
+                    <input type="range" class="zoom-handler">
+                </div><a href="javascript:;" class="remove"><i class="fa fa-trash"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <button type="button" id="previewBtn">Preview</button>
+    <button type="button" id="uploadBtn">Upload Example</button>
+<code id="uploadExample" style="display: none">
+  <h1>Cropping on backend</h1>
+  <pre>
+$('#uploadBtn').on('click', function() {
+    var formData,
+        data = p.getData();
+
+    formData = new FormData();
+    formData.append('file', data.file);
+    // Crop size ( Final image size )
+    formData.append('cropHeight', data.cropHeight);
+    formData.append('cropWidth', data.cropWidth);
+    // Image X and Y position
+    formData.append('x', data.x);
+    formData.append('y', data.y);
+    // New image size (the size needed to position the image)
+    formData.append('newWidth', data.width);
+    formData.append('newHeight', data.height);
+    // Zoom/Scale; 0.1 = 10%
+    formData.append('zoom', data.zoom);
+    // Original image size (if needed)
+    formData.append('originalWidth', data.originalWidth);
+    formData.append('originalHeight', data.originalHeight);
+
+    $.ajax({
+        url: "fakeserve/upload",
+        data: formData,
+        processData: false,
+        type: 'POST',
+        contentType: 'multipart/form-data',
+        mimeType: 'multipart/form-data',
+        success: function (data) {
+            console.log(data);
+        }
+    });
+
+});
+</pre>
+<h1>Sending already croppend (DataURL) to backend (Check security issues)</h1>
+  <p>Backend should save the image file with the DataURL content</p>
+  <pre>
+$('#uploadBtn').on('click', function() {
+    var image = p.getAsDataURL();
+
+    $.post("fakeserver/upload", { image: image });
+
+});
+</pre>
+
+
+</code>
+    <hr>
+    <img src="" alt="" class="preview">
+    <img src="" alt="" class="preview preview--rounded">
+
+
+<!-- end of pfp html  -->
+
+
+
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
