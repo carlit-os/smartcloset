@@ -1,0 +1,175 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- W3 CSS-->
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/extras.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Wardrobe - SmartCloset</title>
+
+    <!-- Custom styles -->
+    <style>
+      .row {
+        padding-bottom: 50px;
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .carousel-control-prev {
+        background-color: #999;
+        width: 50px;
+      }
+
+      .carousel-control-next {
+        background-color: #999;
+        width: 50px;
+      }
+
+      .carousel-indicators li {
+        background-color: #999;
+        background-color: rgba(70, 70, 70, 0.25);
+      }
+
+      .carousel-indicators .active {
+        background-color: #444;
+      }
+
+      .scrolling-wrapper {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+  </head>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" role="navigation">
+    <a class="navbar-brand" href="">SmartCloset</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSmartCloset" aria-controls="navbarSmartCloset" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSmartCloset">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./wardrobe.html">Wardrobe<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./suggestions.html">Suggestions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./shop.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./profile.html">Profile</a>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <input id="searchForm" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button id="searchButton" class="btn btn-secondary my-2 my-sm-0" type="text">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <body style="padding-top: 100px;">
+    <div class="container">
+    <h1 class="mt-0 float-left"> My Wardrobe</h1>
+    <div class="dropdown float-right">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButtonAdd" data-toggle="dropdown" aria-haspopup="true" aria-expande"false">
+        Add to Wardrobe
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonAdd">
+        <a class="dropdown-item" href="./itemadd.html">Add Item</a>
+        <a class="dropdown-item" href="./outfitadd.html">Add Outfit</a>
+      </div>
+    </div><br>
+    <hr>
+    </div>
+
+    <!-- Item Modal -->
+    <div class="modal fade" id="itemModal" tabIndex="-1" role="dialog" aria-labelledby="itemView" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="itemTitle">View Item</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="./images/dog.jpg" class="card-img-top" alt="Dog Tee Shirt">
+            <h6>Name: Dog Tee</h6>
+            <h6>Category: Tops</h6>
+            <h6>Color: White</h6>
+            <h6>Brand:</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Outfit Modal-->
+    <div class="modal fade" id="outfitModal" tabIndex="-1" role="dialog" aria-labelledby="outfitView" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="outfitTitle">View Outfit</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="./images/mirror4.jpg" class="card-img-top" alt="fourth outfit">
+          <h6>Name: Disney</h6>
+          <h6>Category: Casual</h6>
+          <h6>Items:</h6>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- General Wardrobe Page -->
+    <div id="searchResults" class="container">
+    <h2>Items</h2>
+    </div>
+</div>
+  <!-- End of Wardrobe Page -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+  
+  <!-- Search Bar Script -->
+  <script type="text/javascript" src="search.js"></script>
+  </body>
+</html>
