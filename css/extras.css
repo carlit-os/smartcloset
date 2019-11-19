@@ -361,6 +361,9 @@ body, html {
 .message.is-dragover {
   display: none;
 }
+
+
+
 /* EMPTY */
 .photo--empty .photo__options {
   display: none;
@@ -428,4 +431,17 @@ body, html {
 .profile.is-dragover .message.is-wrong-file-type,
 .profile.is-dragover .message.is-wrong-image-size {
   display: none;
+}
+
+.form-login {
+  width:400px;
+  position: relative;
+  top: -200px;
+  left: 600px;
+}
+
+.btnSave{
+  position: relative;
+  top: -200px;
+  left: 600px;
 }
