@@ -49,7 +49,7 @@
         'use strict';
         window.addEventListener('load', function() {
           var forms = document.getElementsByClassName('needs-validation');
-          var validation = Array.prototype.filter.<a href="./signup.html" class="btn btn-link" role="button"call(forms, function(form) {
+          var validation = Array.prototype.filter.call(forms, function(form) {
             form.addEventListener('submit', function(event) {
               if (form.checkValidity() === false) {
                 event.preventDefault();
