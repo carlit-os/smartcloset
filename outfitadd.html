@@ -72,49 +72,80 @@
       </ul>
     </div>
   </nav>
+
   <body>
-    <div class="container" id="signup">
+    <div class="container">
       <h3 class="text-center">Add Outfit to Wardrobe</h3>
-      <small>Asterisk (*) indicates optional</small>
-      <form action="./page2.html">
+      <form action="./wardrobe.html">
         <div class="custom-file">
-          <input type="file" class="custom-file-input" id="validatedCustomFile" accept="image/*" required>
-          <label class="custom-file-label" for="validatedCustomFile">Choose Image...</label>
-          <div class="invalid-feedback">Invalid image</div>
+          <input type="file" class="custom-file-input" id="itemImage" accept="image/*" required>
+          <label class="custom-file-label" for="itemImage">Choose Image...</label>
         </div>
         <div class="input-group mb-3">
-          <select class="custom-select" id="inputGroupSelect01" required>
+          <select class="custom-select" id="outfitCategory" required>
             <option value="">Choose Category...</option>
             <option value="top">Casual</option>
             <option value="bottom">Formal</option>
             <option value="outer">Other</option>
           </select>
           <div class="input-group-append">
-            <label class="input-group-text" for="inputGroupSelect02">Category</label>
+            <label class="input-group-text" for="outiftCategory">Category</label>
           </div>
         </div>
         <div class="form-group">
           <input type="name" class="form-control" placeholder="Outfit Name..." required>
         </div>
         <select class="custom-select" multiple>
-          <option value="">Choose Items...</option>
-          <option value="1">Red Coat</option>
-          <option value="2">Vintage Cap</option>
-          <option value="3">Marlboro Pullover</option>
-          <option value="4">Black Sweater</option>
-          <option value="5">Adidas Superstars</option>
-          <option value="6">Black Jeans</option>
+          <option value="">Choose Tops (optional)...</option>
+          <option value="1">Black Iron Maiden Tee</option>
+          <option value="2">Black Elvis Tee</option>
+          <option value="3">Short-sleeve Polo</option>
+          <option value="4">Color-block Polo</option>
+          <option value="5">Long-sleeve Polo</option>
+          <option value="6">Fish Tee</option>
+          <option value="7">Bottle Tee</option>
+          <option value="8">Plaid Button-up</option>
+          <option value="9">Dog Tee</option>
+        </select>
+        <select class="custom-select" multiple>
+          <option value="">Choose Bottoms (optional)...</option>
+          <option value="10">Light-wash Jeans</option>
+          <option value="11">Black Jeans</option>
+          <option value="12">Medium-wash Jeans</option>
+        </select>
+        <select class="custom-select" multiple>
+          <option value="">Choose Outerwear (optional)...</option>
+          <option value="13">Baja Hoodie</option>
+          <option value="14">Marlboro Pullover</option>
+          <option value="15">Red Coat</option>
+          <option value="16">Tommy Fleece</option>
+          <option value="17">Black Sweater</option>
+        </select>
+        <select class="custom-select" multiple>
+          <option value="">Choose Shoes (optional)...</option>
+          <option value="18">Nike Blazers</option>
+          <option value="19">Adidas Superstars</option>
+          <option value="20">Adidas Runners</option>
+          <option value="21">Vans Shoes</option>
+          <option value="22">New Balance Shoes</option>
+        </select>
+        <select class="custom-select" multiple>
+          <option value="">Choose Accessories (optional)...</option>
+          <option value="23">Columbia Hat</option>
+          <option value="24">Chargers Hat</option>
+          <option value="25">Silver Chain Watch</option>
+          <option value="26">Black Belt</option>
+          <option value="27">Gold Glasses</option>
         </select>
         <button type="submit" class="btn btn-primary">Add Outfit</button>
-        <a href="./page2.html" class="btn btn-outline-secondary">Cancel</a>
+        <a href="./wardrobe.html" class="btn btn-outline-secondary">Cancel</a>
       </form>
-
     </div>
 
     <script>
       $('.custom-file-input').on('change', function() {
-        let fileName = $(this).val().split('\\').pop();
-        $(this).next('.custom-file-control').addClass("selected").html(fileName);
+        var fileName = $(this).val().split('\\').pop();
+        $(this).next('.custom-file-label').addClass("selected").html(fileName);
       });
     </script>
   <body>
