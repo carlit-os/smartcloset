@@ -1,12 +1,13 @@
-function searchBar() 
+function searchBar()
 {
     // setting up search results div and getting keyword
     var sResults = document.getElementById("searchResults");
     var searchVal = document.getElementById("searchForm").value;
     searchVal = searchVal.toLowerCase();
+    if(searchVal == "") return;
     sResults.innerHTML = "<H2>Search Results: '" + searchVal + "'</H2>";
     var foundItems = [];
-    
+
     // Finding each item/outfit in wardrobe that contains search keyword
     var clItems = document.getElementsByClassName("col-sm-3");
     for (var x = 0; x < clItems.length; x++) {
