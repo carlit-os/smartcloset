@@ -68,14 +68,18 @@
     </div>
   </nav>
 
-  <body style="padding-top: 100px;">
+  <body style="padding-top: 100px; background-color: #F4FCFF;">
 
     <div class="container">
-      <h1><p>Profile</p></h1>
+      <h1>Profile</h1>
+      <br>
       <hr>
+    </div>
+
 
 
 <!-- start of pfp html  -->
+    <div class="container">
       <div class="profile">
         <div class="photo">
             <input type="file" accept="image/*">
@@ -111,14 +115,16 @@
             </div>
         </div>
       </div>
+
+
+      <form>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="name" class="form-control" id="Name" aria-describedby="nameHelp" placeholder="Enter name" required>
+          </div>
+      </form>
     </div>
-    <form class="form-login" action="./wardrobe.html" width="200px">
-        <div class="form-group">
-          <label>Name</label>
-          <input type="name" class="form-control" id="Name" aria-describedby="nameHelp" placeholder="Enter name" required>
-        </div>
-    </form>
-     <button type="button" class="btnSave" data-toggle="modal" data-target="#itemModal">Save</a>
+
     <!--<hr>
     <button type="button" id="previewBtn">Preview</button>
     <button type="button" id="uploadBtn">Upload Example</button>
