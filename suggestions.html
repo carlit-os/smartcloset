@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/extras.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Suggestions - SmartCloset</title>
+    <title>What to Wear - SmartCloset</title>
 
     <!-- Custom styles -->
     <style>
@@ -68,7 +68,7 @@
 
   </head>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" role="navigation">
-    <a class="navbar-brand" href="">SmartCloset</a>
+    <a class="navbar-brand" href="./home.html">SmartCloset</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSmartCloset" aria-controls="navbarSmartCloset" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -79,53 +79,26 @@
           <a class="nav-link" href="./wardrobe.html">Wardrobe</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="./suggestions.html">Suggestions<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="./suggestions.html">What to Wear<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./shop.html">Shop</a>
+          <a class="nav-link" href="./shop.html">What to Buy</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./profile.html">Profile</a>
         </li>
       </ul>
 
-      <form onSubmit="return false;" class="form-inline my-2 my-lg-0">
-        <input id="searchForm" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button id="searchButton" type="button" class="btn btn-secondary my-2 my-sm-0">Search</button>
-      </form>
+      <a class="btn btn-secondary float-right" type="role" href="./index.html">Logout</a>
+
     </div>
   </nav>
 
-  <body style="padding-top: 100px;">
+  <body style="padding-top: 100px; background-color: #F4FCFF;">
     <div class="container">
-    <h1 class="mt-0 float-left">Suggestions</h1>
-    <br>
-    <hr>
-    </div>
-
-    <!-- Item Modal -->
-    <div class="modal fade" id="itemModal" tabIndex="-1" role="dialog" aria-labelledby="itemView" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="itemTitle">Buy Item</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img src="./images/levistee.jpg" class="card-img-top" alt="Levi's Tee Shirt">
-            <h6>Name: Levi's Tee</h6>
-            <h6>Category: Tops</h6>
-            <h6>Color: White</h6>
-            <h6>Brand: Levi's</h6>
-			<h6>Price: $12</h6>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
+      <h1 class="mt-0 float-left">What to Wear</h1>
+      <br>
+      <hr>
     </div>
 
     <!--Outfit Modal-->
@@ -133,14 +106,13 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="outfitTitle">Buy Outfit</h5>
+          <h5 class="modal-title" id="outfitTitle">A$AP Rocky Fit</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <img src="./images/rockyfit.jpg" class="card-img-top" alt="fourth outfit">
-          <h6>Name: A$AP Rocky Fit</h6>
           <h6>Category: Streetwear</h6>
           <h6>Price: $450</h6>
         </div>
@@ -151,373 +123,45 @@
       </div>
     </div>
 
-    <!-- General Wardrobe Page -->
+    <!-- General Suggestions Page -->
     <div class="container">
+      <form onSubmit="return false;" class="form-row">
+        <div class="input-group">
+        <input id="searchForm" class="form-control border-primary" type="text" placeholder="What're you searching for?" aria-label="Search">
+        <div class="input-group-append">
+          <button id="searchButton" type="button" class="btn btn-secondary my-2 my-sm-0">Search</button>
+        </div>
+        </div>
+      </form>
       <div id="searchResults" display="none"></div>
-    <h2>Item Suggestions</h2>
-    <h3>Tops</h3>
-    <div id="carouselTops" class="carousel slide" data-interval="false" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselTops" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselTops" data-slide-to="1"></li>
-        <li data-target="#carouselTops" data-slide-to="2"></li>
-		<li data-target="#carouselTops" data-slide-to="3"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row justify-content-center text-center">
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/tommyvertical.jpg" class="card-img-top" alt="Black and Yellow Tommy Hilfiger Shirt">
-          		<div class="card-body">
-          		  <h5 class="card-title">Striped Tommy Hilfiger Shirt</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/pastelpockettee.jpg" class="card-img-top" alt="Block Pastel Tee">
-          		<div class="card-body">
-          		  <h5 class="card-title">Block Pastel Tee</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/jcrew.jpg" class="card-img-top" alt="J. Crew Long Sleeve Shirt">
-          		<div class="card-body">
-          		  <h5 class="card-title">J. Crew Long Sleeve Shirt</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="row justify-content-center text-center">
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-              <img src="./images/vintagegraphic.jpg" class="card-img-top" alt="Vintage Graphic Tee">
-              <div class="card-body">
-                <h5 class="card-title">Vintage Graphic Tee</h5>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-              </div>
-            </div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/tommyhilfiger.jpg" class="card-img-top" alt="Plaid Tommy Hilfiger Shirt">
-          		<div class="card-body">
-          		  <h5 class="card-title">Plaid Tommy Hilfiger Shirt</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/vintagestripe.jpg" class="card-img-top" alt="Striped Vintage Shirt">
-          		<div class="card-body">
-          		  <h5 class="card-title">Striped Vintage Shirt</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="row justify-content-center text-center">
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-              <img src="./images/levistee.jpg" class="card-img-top" alt="Levi's Tee">
-              <div class="card-body">
-                <h5 class="card-title">Levi's Tee</h5>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-              </div>
-            </div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/vanstee.jpg" class="card-img-top" alt="Vans Tee">
-          		<div class="card-body">
-          		  <h5 class="card-title">Vans Tee</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/stripedpastel.jpg" class="card-img-top" alt="Striped Pastel Colored Shirt">
-          		<div class="card-body">
-          		  <h5 class="card-title">Striped Pastel Colored Shirt</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-          </div>
-        </div>
-		<div class="carousel-item">
-          <div class="row justify-content-center text-center">
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-              <img src="./images/guessvertical.jpg" class="card-img-top" alt="Guess Vertical Striped Shirt">
-              <div class="card-body">
-                <h5 class="card-title">Guess Vertical Striped Shirt</h5>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-              </div>
-            </div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/rexshirt.jpg" class="card-img-top" alt="Rex Orange County Shirt">
-          		<div class="card-body">
-          		  <h5 class="card-title">Rex Orange County Shirt</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-			<div class="col-sm-3"></div>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselTops" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselTops" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-    <h3>Bottoms</h3>
-	<div id="carouselBottoms" class="carousel slide" data-interval="false" data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-target="#carouselBottoms" data-slide-to="0" class="active"></li>
-			<li data-target="#carouselBottoms" data-slide-to="1"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<div class="row justify-content-center text-center">
-				  <div class="col-sm-3"><div class="card" style="width: 18rem;">
-					<img src="./images/rippedjeans.jpg" class="card-img-top" alt="Black Ripped Jeans">
-					<div class="card-body">
-					  <h5 class="card-title">Black Ripped Jeans</h5>
-					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-					</div>
-				  </div></div>
-				  <div class="col-sm-3"><div class="card" style="width: 18rem;">
-					<img src="./images/supremenike.jpg" class="card-img-top" alt="Supreme x Nike Track Pants">
-					<div class="card-body">
-					  <h5 class="card-title">Supreme x Nike Track Pants</h5>
-					  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-					</div>
-				  </div></div>
-				  <div class="col-sm-3"><div class="card" style="width: 18rem;">
-					<img src="./images/tanjoggers.jpg" class="card-img-top" alt="Tan Joggers">
-					<div class="card-body">
-					  <h5 class="card-title">Tan Joggers</h5>
-					  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-					</div>
-				  </div></div>
-			  </div>
-			</div>
-			<div class="carousel-item">
-				<div class="row justify-content-center text-center">
-				  <div class="col-sm-3"><div class="card" style="width: 18rem;">
-					<img src="./images/pastelshorts.jpg" class="card-img-top" alt="Pastel Shorts">
-					<div class="card-body">
-					  <h5 class="card-title">Pastel Shorts</h5>
-					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-					</div>
-				  </div></div>
-				  <div class="col-sm-3"><div class="card" style="width: 18rem;">
-					<img src="./images/ralphjorts.jpg" class="card-img-top" alt="Ralph Jorts">
-					<div class="card-body">
-					  <h5 class="card-title">Ralph Lauren Jorts</h5>
-					  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-					</div>
-				  </div></div>
-				  <div class="col-sm-3"><div class="card" style="width: 18rem;">
-					<img src="./images/cuffedjeans.jpg" class="card-img-top" alt="Cuffed Jeans">
-					<div class="card-body">
-					  <h5 class="card-title">Cuffed Jeans</h5>
-					  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-					</div>
-				  </div></div>
-			  </div>
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselBottoms" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-	    <a class="carousel-control-next" href="#carouselBottoms" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
-	</div>
-
-    <h3>Outerwear</h3>
-    <div id="carouselOuterwear" class="carousel slide" data-interval="false" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselOuterwear" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselOuterwear" data-slide-to="1"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row justify-content-center text-center">
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/burberrytrench.jpg" class="card-img-top" alt="Burberry Trench Coat">
-          		<div class="card-body">
-          		  <h5 class="card-title">Burberry Trench Coat</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/bubblecoat.jpg" class="card-img-top" alt="Black Bubble Coat">
-          		<div class="card-body">
-          		  <h5 class="card-title">Black Bubble Coat</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/nikecoat.jpg" class="card-img-top" alt="Light Nike Bubble Coat">
-          		<div class="card-body">
-          		  <h5 class="card-title">Light Nike Bubble Coat</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="row justify-content-center text-center">
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/vest.jpg" class="card-img-top" alt="Blue Vest">
-          		<div class="card-body">
-          		  <h5 class="card-title">Blue Vest</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3"></div>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselOuterwear" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselOuterwear" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-    <h3>Shoes</h3>
-    <div id="carouselShoes" class="carousel slide" data-interval="false" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselShoes" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselShoes" data-slide-to="1"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row justify-content-center text-center">
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/classicvans.jpg" class="card-img-top" alt="Classic Vans">
-          		<div class="card-body">
-          		  <h5 class="card-title">Classic Vans</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/vansslides.jpg" class="card-img-top" alt="Vans Slides">
-          		<div class="card-body">
-          		  <h5 class="card-title">No-Lace Vans</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/eqt.jpg" class="card-img-top" alt="Adidas Running Shoes">
-          		<div class="card-body">
-          		  <h5 class="card-title">Adidas EQT Shoes</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="row justify-content-center text-center">
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/huarache.jpg" class="card-img-top" alt="Nike Huarache">
-          		<div class="card-body">
-          		  <h5 class="card-title">Nike Huarache Shoes</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/airmax.jpg" class="card-img-top" alt="Nike Airmax">
-          		<div class="card-body">
-          		  <h5 class="card-title">Nike Airmax</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-            </div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/aldowalking.jpg" class="card-img-top" alt="Aldo Walking Shoes">
-          		<div class="card-body">
-          		  <h5 class="card-title">Aldo Walking Shoes</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-            </div></div>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselShoes" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselShoes" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-    <h3>Accessories/Other</h3>
-    <div id="carouselOther" class="carousel slide" data-interval="false" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row justify-content-center text-center">
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/rosependant.jpg" class="card-img-top" alt="Rose Pendant Necklace">
-          		<div class="card-body">
-          		  <h5 class="card-title">Rose Pendant Necklage</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/cubanlink.jpg" class="card-img-top" alt="Cuban Link">
-          		<div class="card-body">
-          		  <h5 class="card-title">Cuban Link</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-            <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/beanie.jpg" class="card-img-top" alt="Champion Beanie">
-          		<div class="card-body">
-          		  <h5 class="card-title">Champion Beanie</h5>
-          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">Buy Item</a>
-          		</div>
-          	</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <hr>
 
-    <h2>Outfit Suggestions For Today<h2>
+    <h2>Outfit Inspos<h2>
+    <h3>Casual</h3>
       <div id="carouselOutfits" class="carousel slide" data-interval="false" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="row justify-content-center text-center">
+            <div class="row justify-content-center">
               <div class="col-sm-3"><div class="card" style="width: 18rem;">
-            		<img src="./images/vansfit.jpg" class="card-img-top" alt="black vans with white stripes, black jeans, denim jacket, and black hoodie">
+            		<img src="./images/vansfit.jpg" class="card-img-top" alt="black vans with white stripes, black jeans, denim jacket, and black hoodie"  data-toggle="modal" data-target="#outfitModal" style="cursor: pointer;">
             		<div class="card-body">
             		  <h5 class="card-title">Vans Outfit</h5>
-            		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">Buy Outfit</a>
+            		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">View Outfit</a>
             		</div>
             	</div></div>
               <div class="col-sm-3"><div class="card" style="width: 18rem;">
-            		<img src="./images/rockyfit.jpg" class="card-img-top" alt="A$AP Rocky wearing light denim jacket and jeans with embroidered design">
+            		<img src="./images/rockyfit.jpg" class="card-img-top" alt="ASAP Rocky wearing light denim jacket and jeans with embroidered design" data-toggle="modal" data-target="#outfitModal" style="cursor: pointer;">
             		<div class="card-body">
             		  <h5 class="card-title">A$AP Rocky Fit</h5>
-            		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">Buy Outfit</a>
+            		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">View Outfit</a>
             		</div>
             	</div></div>
               <div class="col-sm-3"><div class="card" style="width: 18rem;">
-            		<img src="./images/eilishdrip.jpg" class="card-img-top" alt="Billie Eilish wearing green bucket hat, short sleeve shirt, pants, and shoes">
+            		<img src="./images/eilishdrip.jpg" class="card-img-top" alt="Billie Eilish wearing green bucket hat, short sleeve shirt, pants, and shoes" data-toggle="modal" data-target="#outfitModal" style="cursor: pointer;">
             		<div class="card-body">
             		  <h5 class="card-title">Billie Eilish Drip</h5>
-            		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">Buy Outfit</a>
+            		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">View Outfit</a>
             		</div>
             	</div></div>
             </div>
@@ -532,7 +176,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
   <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-  
+
   <!-- Search Bar Script -->
   <script type="text/javascript" src="search.js"></script>
   </body>

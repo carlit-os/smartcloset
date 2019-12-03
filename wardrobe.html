@@ -68,7 +68,7 @@
 
   </head>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" role="navigation">
-    <a class="navbar-brand" href="">SmartCloset</a>
+    <a class="navbar-brand" href="./home.html">SmartCloset</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSmartCloset" aria-controls="navbarSmartCloset" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -79,24 +79,21 @@
           <a class="nav-link" href="./wardrobe.html">Wardrobe<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./suggestions.html">Suggestions</a>
+          <a class="nav-link" href="./suggestions.html">What to Wear</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./shop.html">Shop</a>
+          <a class="nav-link" href="./shop.html">What to Buy</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./profile.html">Profile</a>
         </li>
       </ul>
 
-      <form onSubmit="return false;" class="form-inline my-2 my-lg-0">
-        <input id="searchForm" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button id="searchButton" type="button" class="btn btn-secondary my-2 my-sm-0">Search</button>
-      </form>
+      <a class="btn btn-secondary float-right" type="role" href="./index.html">Logout</a>
     </div>
   </nav>
 
-  <body style="padding-top: 100px;">
+  <body style="padding-top: 100px; background-color: #F4FCFF;">
     <div class="container">
     <h1 class="mt-0 float-left">My Wardrobe</h1>
     <div class="dropdown float-right">
@@ -116,14 +113,13 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="itemTitle">View Item</h5>
+            <h5 class="modal-title" id="itemTitle">Dog Tee</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <img src="./images/dog.jpg" class="card-img-top" alt="Dog Tee Shirt">
-            <h6>Name: Dog Tee</h6>
             <h6>Category: Tops</h6>
             <h6>Color: White</h6>
             <h6>Brand:</h6>
@@ -140,14 +136,13 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="outfitTitle">View Outfit</h5>
+          <h5 class="modal-title" id="outfitTitle">Disney</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <img src="./images/mirror4.jpg" class="card-img-top" alt="fourth outfit">
-          <h6>Name: Disney</h6>
           <h6>Category: Casual</h6>
           <h6>Items:</h6>
         </div>
@@ -160,7 +155,17 @@
 
     <!-- General Wardrobe Page -->
     <div class="container">
+      <form onSubmit="return false;" class="form-row">
+        <div class="input-group">
+        <input id="searchForm" class="form-control border-primary" type="text" placeholder="What're you searching for?" aria-label="Search">
+        <div class="input-group-append">
+          <button id="searchButton" type="button" class="btn btn-secondary my-2 my-sm-0">Search</button>
+        </div>
+        </div>
+      </form>
+
       <div id="searchResults" display="none"></div>
+      <hr>
     <h2>Items</h2>
     <h3>Tops</h3>
     <div id="carouselTops" class="carousel slide" data-interval="false" data-ride="carousel">
@@ -169,25 +174,31 @@
         <li data-target="#carouselTops" data-slide-to="1"></li>
         <li data-target="#carouselTops" data-slide-to="2"></li>
       </ol>
+
+      <a class="carousel-control-prev" href="#carouselTops" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="row justify-content-center text-center">
+          <div class="row justify-content-center">
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/bandshirt.jpg" class="card-img-top" alt="Iron Maiden Band Tee Shirt">
+          		<img src="./images/bandshirt.jpg" class="card-img-top" alt="Iron Maiden Band Tee Shirt" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Black Iron Maiden Tee</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/elvisshirt.jpg" class="card-img-top" alt="Black Elvis Tee Shirt">
+          		<img src="./images/elvisshirt.jpg" class="card-img-top" alt="Black Elvis Tee Shirt" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Black Elvis Tee</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/shortpolo.jpg" class="card-img-top" alt="Short sleeve Polo">
+          		<img src="./images/shortpolo.jpg" class="card-img-top" alt="Short sleeve Polo" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Short-sleeve Polo</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
@@ -196,23 +207,23 @@
           </div>
         </div>
         <div class="carousel-item">
-          <div class="row justify-content-center text-center">
+          <div class="row justify-content-center">
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-              <img src="./images/blockpolo.jpg" class="card-img-top" alt="Color block polo">
+              <img src="./images/blockpolo.jpg" class="card-img-top" alt="Color block polo" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
               <div class="card-body">
                 <h5 class="card-title">Color-block Polo</h5>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
               </div>
             </div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/polo.jpg" class="card-img-top" alt="Long sleeve Polo">
+          		<img src="./images/polo.jpg" class="card-img-top" alt="Long sleeve Polo" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Long-sleeve Polo</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/fishshirt.jpg" class="card-img-top" alt="Fish Tee Shirt">
+          		<img src="./images/fishshirt.jpg" class="card-img-top" alt="Fish Tee Shirt" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Fish Tee</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
@@ -221,23 +232,23 @@
           </div>
         </div>
         <div class="carousel-item">
-          <div class="row justify-content-center text-center">
+          <div class="row justify-content-center ">
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-              <img src="./images/bottleshirt.jpg" class="card-img-top" alt="Bottle Tee Shirt">
+              <img src="./images/bottleshirt.jpg" class="card-img-top" alt="Bottle Tee Shirt" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
               <div class="card-body">
                 <h5 class="card-title">Bottle Tee</h5>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
               </div>
             </div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/plaid.jpg" class="card-img-top" alt="Plaid Button-up Shirt">
+          		<img src="./images/plaid.jpg" class="card-img-top" alt="Plaid Button-up Shirt" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Plaid Button-up</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/dog.jpg" class="card-img-top" alt="Dog Tee Shirt">
+          		<img src="./images/dog.jpg" class="card-img-top" alt="Dog Tee Shirt" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Dog Tee</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
@@ -246,39 +257,58 @@
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselTops" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
+
       <a class="carousel-control-next" href="#carouselTops" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+
     </div>
 
     <h3>Bottoms</h3>
-    <div class="row justify-content-center text-center">
-      <div class="col-sm-3"><div class="card" style="width: 18rem;">
-        <img src="./images/momjeans.jpg" class="card-img-top" alt="Light wash Jeans">
-        <div class="card-body">
-          <h5 class="card-title">Light-wash Jeans</h5>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
+    <div id="carouselBottoms" class="carousel slide" data-interval="false" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselBottoms" data-slide-to="0" class="active"></li>
+      </ol>
+
+      <a class="carousel-control-prev" href="#carouselBottoms" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class="col-sm-3"><div class="card" style="width: 18rem;">
+          		<img src="./images/momjeans.jpg" class="card-img-top" alt="Light Wash jeans" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
+          		<div class="card-body">
+          		  <h5 class="card-title">Light-wash Jeans</h5>
+          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
+          		</div>
+          	</div></div>
+            <div class="col-sm-3"><div class="card" style="width: 18rem;">
+          		<img src="./images/jeans.jpg" class="card-img-top" alt="Black Jeans" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
+          		<div class="card-body">
+          		  <h5 class="card-title">Black Jeans</h5>
+          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
+          		</div>
+          	</div></div>
+            <div class="col-sm-3"><div class="card" style="width: 18rem;">
+          		<img src="./images/levis.jpg" class="card-img-top" alt="Medium wash jeans" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
+          		<div class="card-body">
+          		  <h5 class="card-title">Medium Wash-Jeans</h5>
+          		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
+          		</div>
+          	</div></div>
+          </div>
         </div>
-      </div></div>
-      <div class="col-sm-3"><div class="card" style="width: 18rem;">
-        <img src="./images/jeans.jpg" class="card-img-top" alt="Black Jeans">
-        <div class="card-body">
-          <h5 class="card-title">Black Jeans</h5>
-          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
-        </div>
-      </div></div>
-      <div class="col-sm-3"><div class="card" style="width: 18rem;">
-        <img src="./images/levis.jpg" class="card-img-top" alt="Short sleeve Polo">
-        <div class="card-body">
-          <h5 class="card-title">Medium-wash Jeans</h5>
-          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
-        </div>
-      </div></div>
+      </div>
+
+      <a class="carousel-control-next" href="#carouselBottoms" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
     </div>
 
     <h3>Outerwear</h3>
@@ -287,25 +317,31 @@
         <li data-target="#carouselOuterwear" data-slide-to="0" class="active"></li>
         <li data-target="#carouselOuterwear" data-slide-to="1"></li>
       </ol>
+
+      <a class="carousel-control-prev" href="#carouselOuterwear" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="row justify-content-center text-center">
+          <div class="row justify-content-center">
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/rug.jpg" class="card-img-top" alt="Baja Hoodie">
+          		<img src="./images/rug.jpg" class="card-img-top" alt="Baja Hoodie" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Baja Hoodie</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/pullover.jpg" class="card-img-top" alt="Marlboro Pullover">
+          		<img src="./images/pullover.jpg" class="card-img-top" alt="Marlboro Pullover" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Marlboro Pullover</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/coat.jpg" class="card-img-top" alt="Red Coat">
+          		<img src="./images/coat.jpg" class="card-img-top" alt="Red Coat" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Red Coat</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
@@ -314,16 +350,16 @@
           </div>
         </div>
         <div class="carousel-item">
-          <div class="row justify-content-center text-center">
+          <div class="row justify-content-center">
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/tommy.jpg" class="card-img-top" alt="Blue Tommy Hilfiger Fleece">
+          		<img src="./images/tommy.jpg" class="card-img-top" alt="Blue Tommy Hilfiger Fleece" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Tommy Fleece</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/sweater.jpg" class="card-img-top" alt="Black Sweater">
+          		<img src="./images/sweater.jpg" class="card-img-top" alt="Black Sweater" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Black Sweater</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
@@ -333,10 +369,7 @@
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselOuterwear" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
+
       <a class="carousel-control-next" href="#carouselOuterwear" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
@@ -349,25 +382,31 @@
         <li data-target="#carouselShoes" data-slide-to="0" class="active"></li>
         <li data-target="#carouselShoes" data-slide-to="1"></li>
       </ol>
+
+      <a class="carousel-control-prev" href="#carouselShoes" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="row justify-content-center text-center">
+          <div class="row justify-content-center">
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/nikes.jpg" class="card-img-top" alt="Nike Shoes">
+          		<img src="./images/nikes.jpg" class="card-img-top" alt="Nike Shoes" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Nike Blazers</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/superstars.jpg" class="card-img-top" alt="Adidas Shoes">
+          		<img src="./images/superstars.jpg" class="card-img-top" alt="Adidas Shoes" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Adidas Superstars</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/adidas.jpg" class="card-img-top" alt="Adidas Running Shoes">
+          		<img src="./images/adidas.jpg" class="card-img-top" alt="Adidas Running Shoes" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Adidas Runners</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
@@ -376,16 +415,16 @@
           </div>
         </div>
         <div class="carousel-item">
-          <div class="row justify-content-center text-center">
+          <div class="row justify-content-center">
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/vans.jpg" class="card-img-top" alt="Vans Shoes">
+          		<img src="./images/vans.jpg" class="card-img-top" alt="Vans Shoes" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Vans Shoes</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/newbalance.jpg" class="card-img-top" alt="New Balance Shoes">
+          		<img src="./images/newbalance.jpg" class="card-img-top" alt="New Balance Shoes" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">New Balance Shoes</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
@@ -395,10 +434,7 @@
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselShoes" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
+
       <a class="carousel-control-next" href="#carouselShoes" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
@@ -411,25 +447,31 @@
         <li data-target="#carouselOther" data-slide-to="0" class="active"></li>
         <li data-target="#carouselOther" data-slide-to="1"></li>
       </ol>
+
+      <a class="carousel-control-prev" href="#carouselOther" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <div class="row justify-content-center text-center">
+          <div class="row justify-content-center">
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/hat.jpg" class="card-img-top" alt="Columbia Hat">
+          		<img src="./images/hat.jpg" class="card-img-top" alt="Columbia Hat" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Columbia Hat</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/hat1.jpg" class="card-img-top" alt="San Diego Hat">
+          		<img src="./images/hat1.jpg" class="card-img-top" alt="San Diego Hat" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Chargers Hat</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/watch.jpg" class="card-img-top" alt="Silver Watch">
+          		<img src="./images/watch.jpg" class="card-img-top" alt="Silver Watch" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Silver Chain Watch</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
@@ -438,16 +480,16 @@
           </div>
         </div>
         <div class="carousel-item">
-          <div class="row justify-content-center text-center">
+          <div class="row justify-content-center">
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-          		<img src="./images/belt.jpg" class="card-img-top" alt="Black Leather Belt">
+          		<img src="./images/belt.jpg" class="card-img-top" alt="Black Leather Belt" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
           		<div class="card-body">
           		  <h5 class="card-title">Black Belt</h5>
           		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
           		</div>
           	</div></div>
             <div class="col-sm-3"><div class="card" style="width: 18rem;">
-            		<img src="./images/glasses.jpg" class="card-img-top" alt="Gold Glasses">
+            		<img src="./images/glasses.jpg" class="card-img-top" alt="Gold Glasses" data-toggle="modal" data-target="#itemModal" style="cursor: pointer;">
             		<div class="card-body">
             		  <h5 class="card-title">Gold Glasses</h5>
             		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#itemModal">View Item</a>
@@ -457,10 +499,7 @@
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselOther" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
+
       <a class="carousel-control-next" href="#carouselOther" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
@@ -475,25 +514,31 @@
           <li data-target="#carouselOutfits" data-slide-to="0" class="active"></li>
           <li data-target="#carouselOutfits" data-slide-to="1"></li>
         </ol>
+
+        <a class="carousel-control-prev" href="#carouselOutfits" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div class="row justify-content-center text-center">
+            <div class="row justify-content-center">
               <div class="col-sm-3"><div class="card" style="width: 18rem;">
-            		<img src="./images/mirror1.jpg" class="card-img-top" alt="first outfit">
+            		<img src="./images/mirror1.jpg" class="card-img-top" alt="first outfit" data-toggle="modal" data-target="#outfitModal">
             		<div class="card-body">
             		  <h5 class="card-title">Sweater Weather</h5>
             		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">View Outfit</a>
             		</div>
             	</div></div>
               <div class="col-sm-3"><div class="card" style="width: 18rem;">
-            		<img src="./images/mirror2.jpg" class="card-img-top" alt="second outfit">
+            		<img src="./images/mirror2.jpg" class="card-img-top" alt="second outfit" data-toggle="modal" data-target="#outfitModal">
             		<div class="card-body">
             		  <h5 class="card-title">Black on Black</h5>
             		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">View Outfit</a>
             		</div>
             	</div></div>
               <div class="col-sm-3"><div class="card" style="width: 18rem;">
-            		<img src="./images/mirror3.jpg" class="card-img-top" alt="third outfit">
+            		<img src="./images/mirror3.jpg" class="card-img-top" alt="third outfit" data-toggle="modal" data-target="#outfitModal">
             		<div class="card-body">
             		  <h5 class="card-title">Blast Off</h5>
             		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">View Outfit</a>
@@ -502,16 +547,16 @@
             </div>
           </div>
           <div class="carousel-item">
-            <div class="row justify-content-center text-center">
+            <div class="row justify-content-center">
               <div class="col-sm-3"><div class="card" style="width: 18rem;">
-            		<img src="./images/mirror4.jpg" class="card-img-top" alt="fourth outfit">
+            		<img src="./images/mirror4.jpg" class="card-img-top" alt="fourth outfit" data-toggle="modal" data-target="#outfitModal">
             		<div class="card-body">
             		  <h5 class="card-title">Disney</h5>
             		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">View Outfit</a>
             		</div>
             	</div></div>
               <div class="col-sm-3"><div class="card" style="width: 18rem;">
-            		<img src="./images/mirror5.jpg" class="card-img-top" alt="fifth outfit">
+            		<img src="./images/mirror5.jpg" class="card-img-top" alt="fifth outfit" data-toggle="modal" data-target="#outfitModal">
             		<div class="card-body">
             		  <h5 class="card-title">Spots</h5>
             		  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#outfitModal">View Outfit</a>
@@ -521,10 +566,7 @@
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselOutfits" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
+
         <a class="carousel-control-next" href="#carouselOutfits" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
@@ -537,7 +579,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
   <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-  
+
   <!-- Search Bar Script -->
   <script type="text/javascript" src="search.js"></script>
   </body>
