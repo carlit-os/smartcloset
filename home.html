@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="css/extras.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Edit Profile - SmartCloset</title>
+    <title>Home - SmartCloset</title>
 
     <style>
-      body {
-        padding-top: 100px;
+      .row {
+        padding-bottom: 50px;
       }
 
       .custom-file{
@@ -51,35 +51,53 @@
   </head>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" role="navigation">
     <a class="navbar-brand" href="./home.html">SmartCloset</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="./wardrobe.html">Wardrobe<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./suggestions.html">What to Wear</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./shop.html">What to Buy</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./profile.html">Profile</a>
-        </li>
-      </ul>
-
-      <a class="btn btn-secondary float-right" type="role" href="./index.html">Logout</a>
-
-    </div>
+    <a class="btn btn-secondary float-right" href="./index.html">Logout</a>
   </nav>
 
-  <body>
+  <body style="padding-top: 100px; background-color: #F4FCFF;">
     <div class="container">
-
-
+      <div class="row justify-content-center">
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./images/wardrobe.png" alt="Wardrobe icon">
+            <div class="card-body">
+              <h5 class="card-title">Wardrobe</h5>
+              <p class="card-text">View your collection of items and outfits.</p>
+              <a href="./wardrobe.html" class="btn btn-primary">Go to Wardrobe</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./images/suggestions.png" alt="What to wear icon">
+            <div class="card-body">
+              <h5 class="card-title">What to Wear</h5>
+              <p class="card-text">View possible item combos and outfit inspos.</p>
+              <a href="./suggestions.html" class="btn btn-primary">Go to What to Wear</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./images/shop.png" alt="What to Buy icon">
+            <div class="card-body">
+              <h5 class="card-title">What to Buy</h5>
+              <p class="card-text">View new items you can add to your wardrobe.</p>
+              <a href="./shop.html" class="btn btn-primary">Go to What to Buy</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./images/profile_link.png" alt="Profile icon">
+            <div class="card-body">
+              <h5 class="card-title">Profile</h5>
+              <p class="card-text">View and edit your info and preferences.</p>
+              <a href="./profile.html" class="btn btn-primary">Go to Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
